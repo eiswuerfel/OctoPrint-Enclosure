@@ -4,6 +4,7 @@ import time
 
 LED_INVERT = False
 LED_FREQ_HZ = 800000
+LED_CHANNEL = 1
 
 if len(sys.argv) == 8:
     LED_PIN = int(sys.argv[1])
@@ -17,7 +18,7 @@ else:
     print("fail")
     sys.exit(1)
 
-strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT)
+strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA , LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
 strip.begin()
 
 color = Color(red, green, blue)
